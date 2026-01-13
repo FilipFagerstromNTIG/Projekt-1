@@ -3,6 +3,8 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
+        OrderManager manager = new OrderManager();
+
         System.out.println("Welcome to the Building Management System!");
         System.out.println("Please select a building type to manage:");
         System.out.println("1. Villa");

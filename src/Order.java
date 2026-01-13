@@ -17,7 +17,7 @@ public class Order {
         return building.getPrice();
     }
 
-    public string toString() {
+    public String toString() {
         return "Order ID: " + id + ", Customer: " + customerName + ", Building Type: " + building.getType() + ", Price: " + getPrice();
     }
 }

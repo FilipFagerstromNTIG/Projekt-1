@@ -6,7 +6,7 @@ public class OrderManager {
 
     public void addOrder(String name, Building building) {
         Order o = new Order(nextId);
-        order.add(o);
+        orders.add(o);
         nextId++;
     }
 
