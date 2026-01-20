@@ -1,11 +1,13 @@
+
 import java.util.ArrayList;
 
 public class OrderManager {
+
     private ArrayList<Order> orders = new ArrayList<Order>();
     private int nextId = 1;
 
     public void addOrder(String name, Building building) {
-        Order o = new Order(nextId);
+        Order o = new Order(nextId, name, building);
         orders.add(o);
         nextId++;
     }

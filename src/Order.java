@@ -1,4 +1,6 @@
+
 public class Order {
+
     private int id;
     private String customerName;
     private Building building;
@@ -18,6 +20,9 @@ public class Order {
     }
 
     public String toString() {
-        return "Order ID: " + id + ", Customer: " + customerName + ", Building Type: " + building.getType() + ", Price: " + getPrice();
+        return "Order ID: " + id
+                + ", Customer: " + customerName
+                + ", Building Type: " + building.getType()
+                + ", Price: " + getPrice();
     }
 }

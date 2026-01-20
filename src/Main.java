@@ -1,37 +1,48 @@
+
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws Exception {
+
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         OrderManager manager = new OrderManager();
 
-        System.out.println("Welcome to the Building Management System!");
-        System.out.println("Please select a building type to manage:");
-        System.out.println("1. Villa");
-        System.out.println("2. Garage");
-        System.out.println("3. Exit");
+        System.out.println("1. Lägg till Villa");
+        System.out.println("2. Lägg till Garage");
+        System.out.println("3. Ta bort order");
+        System.out.println("4. Lista orders");
+        System.out.println("5. Visa vinst");
+
         int choice = sc.nextInt();
         sc.nextLine();
 
         if (choice == 1) {
-            System.out.println("Customer name");
+            System.out.print("Customer name: ");
             String name = sc.nextLine();
+            manager.addOrder(name, new Villa());
+            System.out.println("Villa order added");
+        }
 
-            System.out.println("Type: (villa)");
-            sc.nextLine();
+        if (choice == 2) {
+            System.out.print("Customer name: ");
+            String name = sc.nextLine();
+            manager.addOrder(name, new Garage());
+            System.out.println("Garage order added");
+        }
 
-            Building b = new Villa();
-            manager.addOrder(name, b);
-
-            System.out.println("Villa order added for " + name);
-        } else if (choice == 2) {
+        if (choice == 3) {
             System.out.print("ID: ");
             int id = sc.nextInt();
             manager.removeOrder(id);
-        } else if (choice == 3) {
+            System.out.println("Order removed (om ID fanns)");
+        }
+
+        if (choice == 4) {
             manager.listOrders();
-        } else if (choice == 4) {
-            System.out.println(manager.getTotalProfit());
+        }
+
+        if (choice == 5) {
+            System.out.println("Total vinst: " + manager.getTotalProfit());
         }
     }
 }
